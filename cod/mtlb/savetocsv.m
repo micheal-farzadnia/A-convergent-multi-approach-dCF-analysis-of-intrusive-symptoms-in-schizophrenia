@@ -1,12 +1,8 @@
-%% save step (9)
-
 load("folds.mat");
 load("dfnc_ts.mat");
 targets = readtable('targets.csv');
 
-%colnames = {'s1dw', 's2dw', 's3dw', 's4dw', 'trns', 's1sc-cc', 's1sc-dm', 's1cc-dm', 's2sc-cc', 's2sc-dm', 's2cc-dm', 's3sc-cc', 's3sc-dm', 's3cc-dm', 's4sc-cc', 's4sc-dm', 's4cc-dm'};
 colnames = {'s1sc-cc', 's1sc-dm', 's1cc-dm', 's2sc-cc', 's2sc-dm', 's2cc-dm', 's3sc-cc', 's3sc-dm', 's3cc-dm', 's4sc-cc', 's4sc-dm', 's4cc-dm'};
-%colnames = {'s1dw', 's2dw', 's3dw', 's4dw','trns'};
 
 for i=1:83
     [a,mu,sigma] = zscore(ds{i,1}(:,6:17));
