@@ -3,7 +3,7 @@ This is a fully reproducible proof-of-concept pipeline, including all the code, 
 
 ## Preprocessing
 
-Launch SPM and follow a simple workflow as described below: 
+Collect rsfMRI data, including clinical measures (PANSS scores), from 83 patients and 89 healthy controls from the COINS repository, as shown in Video 1.mp4. Launch SPM and follow a simple workflow as described below: 
 
 ```mermaid
 graph TD;
@@ -37,8 +37,7 @@ flowchart TB
   
 ```
 
-
-Launch GIFT in MATLAB and run the dFNC toolbox. Select the following file obtained from CICA–as the input parameter file. 
+Launch GIFT in MATLAB and run the spatial reference-based (constrained) ICA toolbox to decompose independent components using NeuroMark template v1.0, providing spatial priors. Then, run the dFNC toolbox and select the following parameter file obtained from cICA algorithm. As of this step ahead, all the functions required to reproduce the pipeline are stored at ```cod/mtlb``` folder. 
 
 ```
 gr_ica_parameter_info.mat
@@ -84,6 +83,6 @@ Finally, save the target variables, including HB and Del, and their correspondin
 savetocsv.m 
 ```
 
-The script also performs Z–score normalization of the data within each iteration of the loop. After this preparation, launch a Python IDE and run ```main.py ```. After XGBoost modeling, the significant state is identified, allowing us to identify intra–state trends. Use ``` significant_state_analysis.m ``` to perform the edge set two— sided permutation analysis to obtain effect sizes and FDR—adjusted p—values. To do so, cutoffs are properly applied in accordance with best practices to identify the most significant edge(s).
+The script also performs Z–score normalization of the data within each iteration of the loop. After this preparation, 83 folds are generated, as shown in the data folder (r). Launch a Python IDE and run ``` main.py ```, then adjust the input path to the obtained folds, which is set to ``` /Users/r ``` by default. After XGBoost modeling, the significant state is identified, allowing us to identify intra–state trends. Use ``` significant_state_analysis.m ``` to perform the edge set two— sided permutation analysis to obtain effect sizes and FDR—adjusted p—values. To do so, cutoffs are properly applied in accordance with best practices to identify the most significant edge(s).
 
 
