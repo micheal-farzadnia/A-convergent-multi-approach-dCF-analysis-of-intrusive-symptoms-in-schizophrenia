@@ -7,8 +7,6 @@ colnames = {'s1sc-cc', 's1sc-dm', 's1cc-dm', 's2sc-cc', 's2sc-dm', 's2cc-dm', 's
 for i=1:83
     [a,mu,sigma] = zscore(ds{i,1}(:,6:17));
     T = array2table(a, 'VariableNames', colnames);
-    %T = array2table(ds{i,1}(:,1:5), 'VariableNames', colnames);
-    %S = array2table((dfnc_ts{i,4} - mu) ./ sigma,'VariableNames',colnames);
     S = array2table(dfnc_ts{i,4}(:,6:17),'VariableNames',colnames);
 
     % assign target labels to training folds
