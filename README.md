@@ -3,7 +3,7 @@ This is a fully reproducible pipeline, including all the code, the applied datas
 
 ## Preprocessing
 
-Collect rsfMRI data, including clinical measures (PANSS scores), from 83 patients and 89 healthy controls from the COINS repository, as shown in Video 1.mp4. However, we have already compiled data to make the process more convenient, so users do not have to start from scratch to preprocess rsfMRI, though it is highly recommended to do preprocessing steps from scratch for reproducibility. The final step is smoothing, and the 172 smoothed time series data are available at https://drive.google.com/drive/folders/1eW4KuouGnV757rmgPs11CL2EsEiJ_9gN for use in the exploratory analysis described in the next section. 
+Collect rsfMRI data, including clinical measures (PANSS scores), from 83 patients and 89 healthy controls from the COINS repository, as shown in Video 1.mp4. However, we have already compiled data to make the process more convenient, so users do not have to start from scratch to preprocess rsfMRI, though it is highly recommended to do preprocessing steps from scratch for reproducibility. The final step is smoothing, and the 172 smoothed time series (post-processed data) are available at https://drive.google.com/drive/folders/1eW4KuouGnV757rmgPs11CL2EsEiJ_9gN for use in the exploratory analysis described in the next section. 
 
 Launch SPM and follow a simple workflow as described below: 
 
